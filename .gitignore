@@ -1,0 +1,21 @@
+# Файл с секретными ключами
+config.yaml
+
+# Выходные данные
+*.csv
+keyword_data.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# IDE и системные файлы
+.idea/
+.vscode/
+.DS_Store
