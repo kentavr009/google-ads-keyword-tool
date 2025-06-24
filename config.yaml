@@ -1,0 +1,38 @@
+# СКОПИРУЙТЕ ЭТОТ ФАЙЛ В config.yaml И ЗАПОЛНИТЕ СВОИМИ ДАННЫМИ
+# ВАЖНО: НИКОГДА НЕ ПУБЛИКУЙТЕ ФАЙЛ config.yaml С ВАШИМИ КЛЮЧАМИ В ОТКРЫТЫЙ ДОСТУП
+
+# Секция для аутентификации в Google Ads API
+# Подробности, как получить эти данные, смотрите в документации Google.
+google_ads:
+  developer_token: "ВАШ_ТОКЕН_РАЗРАБОТЧИКА"
+  client_id: "ВАШ_CLIENT_ID"
+  client_secret: "ВАШ_CLIENT_SECRET"
+  refresh_token: "ВАШ_REFRESH_TOKEN"
+  login_customer_id: "ВАШ_МЕНЕДЖЕРСКИЙ_ID" # ID управляющего аккаунта (MCC)
+  use_proto_plus: True
+
+# Параметры работы скрипта
+script_parameters:
+  # ID клиентского аккаунта Google Ads, для которого выполняется запрос.
+  # Указывается без дефисов.
+  customer_id: "ВАШ_CUSTOMER_ID"
+
+  # Настройки таргетинга
+  # ID языка можно найти здесь: https://developers.google.com/google-ads/api/reference/data/codes-formats#languages
+  language_id: 1010 # 1010 = Французский, 1000 = Английский, 1031 = Русский
+
+  # ID гео-таргетинга: https://developers.google.com/google-ads/api/reference/data/geotargets
+  # Можно указать несколько ID.
+  geo_target_ids:
+    - 2250 # Франция
+    # - 2840 # Россия (Пример)
+
+  # Включить ли в результаты ключевые слова для взрослых
+  include_adult_keywords: false
+
+  # Настройки производительности
+  # Количество ключевых слов, отправляемых в одном запросе к API (максимум 10)
+  chunk_size: 10
+
+  # Пауза между запросами в секундах, чтобы избежать превышения лимитов API
+  sleep_interval_seconds: 1
